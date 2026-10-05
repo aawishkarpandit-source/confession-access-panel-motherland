@@ -63,6 +63,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     res.status(405).json({ ok: false, error: 'Method not allowed' });
   } catch (err) {
     console.error('confessions api error', err);
-    res.status(500).json({ ok: false, error: 'Server error' });
+    // TEMPORARY debug: surface the real message so the owner can diagnose.
+    // Revert to a generic message once fixed.
+    const detail = err instanceof Error ? err.message : 'unknown error';
+    res.status(500).json({ ok: false, error: `DEBUG: ${detail}` });
   }
 }
