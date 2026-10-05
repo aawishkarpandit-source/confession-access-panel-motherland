@@ -1,0 +1,19 @@
+{
+  "name": "confession-access-panel-motherland",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 5174",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@supabase/supabase-js": "^2.47.0",
+    "@types/node": "^24.19.1",
+    "@vercel/node": "^5.0.0",
+    "typescript": "^5.9.3",
+    "vite": "^6.0.0"
+  }
+}

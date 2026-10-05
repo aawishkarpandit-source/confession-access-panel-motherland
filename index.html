@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Access Panel — Motherland Confessions</title>
+  </head>
+  <body>
+    <div id="app">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <div>
+            <p class="brand-school">MOTHERLAND SECONDARY SCHOOL</p>
+            <h1 class="brand-title">Confession access panel</h1>
+          </div>
+        </div>
+        <button id="logoutBtn" class="btn-ghost hidden" type="button">Lock</button>
+      </header>
+
+      <main class="container">
+        <!-- Login card -->
+        <section id="loginCard" class="card">
+          <h2>Staff only</h2>
+          <p class="muted">Enter the panel password (set as <code>ADMIN_PASSWORD</code> in Vercel env variables). It is never stored — it is sent over HTTPS and checked server-side.</p>
+          <label class="field">
+            <span>Panel password</span>
+            <input id="passwordInput" type="password" autocomplete="current-password" placeholder="••••••••" />
+          </label>
+          <button id="loginBtn" type="button" class="btn-primary">Unlock confessions</button>
+          <p id="loginStatus" class="status" role="status" aria-live="polite"></p>
+        </section>
+
+        <!-- Confessions list -->
+        <section id="panelView" class="hidden">
+          <div class="toolbar">
+            <p id="countLabel" class="muted">0 confessions</p>
+            <button id="refreshBtn" type="button" class="btn-ghost">Refresh</button>
+          </div>
+          <p id="panelStatus" class="status" role="status" aria-live="polite"></p>
+          <div id="list" class="list"></div>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
